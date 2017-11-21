@@ -1,0 +1,106 @@
+﻿@model Examen01.Models.Examenes
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Examenes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Profesores.Nombres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profesores.Nombres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodExamenes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodExamenes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Curso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Curso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Intentos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Intentos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumPreguntas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumPreguntas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CalifMax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CalifMax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdExamenes }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

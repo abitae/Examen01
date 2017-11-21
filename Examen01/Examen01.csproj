@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -53,6 +59,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -142,10 +150,25 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AlumnosController.cs" />
+    <Compile Include="Controllers\ExamenesAlumnosController.cs" />
+    <Compile Include="Controllers\ExamenesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PreguntaRespuestasController.cs" />
+    <Compile Include="Controllers\PreguntasController.cs" />
+    <Compile Include="Controllers\ProfesoresController.cs" />
+    <Compile Include="Controllers\RespuestasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Alumnos.cs" />
+    <Compile Include="Models\Examenes.cs" />
+    <Compile Include="Models\Examenes_Alumnos.cs" />
+    <Compile Include="Models\Modelo.cs" />
+    <Compile Include="Models\PreguntaRespuesta.cs" />
+    <Compile Include="Models\Preguntas.cs" />
+    <Compile Include="Models\Profesores.cs" />
+    <Compile Include="Models\Respuestas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +183,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\Examen001 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -185,10 +209,44 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Alumnos\Create.cshtml" />
+    <Content Include="Views\Alumnos\Delete.cshtml" />
+    <Content Include="Views\Alumnos\Details.cshtml" />
+    <Content Include="Views\Alumnos\Edit.cshtml" />
+    <Content Include="Views\Alumnos\Index.cshtml" />
+    <Content Include="Views\Examenes\Create.cshtml" />
+    <Content Include="Views\Examenes\Delete.cshtml" />
+    <Content Include="Views\Examenes\Details.cshtml" />
+    <Content Include="Views\Examenes\Edit.cshtml" />
+    <Content Include="Views\Examenes\Index.cshtml" />
+    <Content Include="Views\ExamenesAlumnos\Create.cshtml" />
+    <Content Include="Views\ExamenesAlumnos\Delete.cshtml" />
+    <Content Include="Views\ExamenesAlumnos\Details.cshtml" />
+    <Content Include="Views\ExamenesAlumnos\Edit.cshtml" />
+    <Content Include="Views\ExamenesAlumnos\Index.cshtml" />
+    <Content Include="Views\PreguntaRespuestas\Create.cshtml" />
+    <Content Include="Views\PreguntaRespuestas\Delete.cshtml" />
+    <Content Include="Views\PreguntaRespuestas\Details.cshtml" />
+    <Content Include="Views\PreguntaRespuestas\Edit.cshtml" />
+    <Content Include="Views\PreguntaRespuestas\Index.cshtml" />
+    <Content Include="Views\Preguntas\Create.cshtml" />
+    <Content Include="Views\Preguntas\Delete.cshtml" />
+    <Content Include="Views\Preguntas\Details.cshtml" />
+    <Content Include="Views\Preguntas\Edit.cshtml" />
+    <Content Include="Views\Preguntas\Index.cshtml" />
+    <Content Include="Views\Profesores\Create.cshtml" />
+    <Content Include="Views\Profesores\Delete.cshtml" />
+    <Content Include="Views\Profesores\Details.cshtml" />
+    <Content Include="Views\Profesores\Edit.cshtml" />
+    <Content Include="Views\Profesores\Index.cshtml" />
+    <Content Include="Views\Respuestas\Create.cshtml" />
+    <Content Include="Views\Respuestas\Delete.cshtml" />
+    <Content Include="Views\Respuestas\Details.cshtml" />
+    <Content Include="Views\Respuestas\Edit.cshtml" />
+    <Content Include="Views\Respuestas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

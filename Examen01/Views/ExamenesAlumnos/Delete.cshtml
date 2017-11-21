@@ -1,0 +1,80 @@
+﻿@model Examen01.Models.Examenes_Alumnos
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Examenes_Alumnos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Alumnos.Nombres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alumnos.Nombres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Examenes.CodExamenes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Examenes.CodExamenes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HoraInitial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoraInitial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HoraFinal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoraFinal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.intento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.intento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Calificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calificacion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

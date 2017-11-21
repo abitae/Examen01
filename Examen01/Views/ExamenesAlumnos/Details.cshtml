@@ -1,0 +1,74 @@
+﻿@model Examen01.Models.Examenes_Alumnos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Examenes_Alumnos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Alumnos.Nombres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alumnos.Nombres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Examenes.CodExamenes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Examenes.CodExamenes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HoraInitial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoraInitial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HoraFinal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoraFinal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.intento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.intento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Calificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calificacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
